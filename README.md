@@ -28,7 +28,9 @@ After doing the Use Case Digram, I did the Conceptual Class Diagram for Domain M
 Then did the Contract and did not know how to do it correctly so I did my best on doing them, as shown in the next image.
 ![Screenshot 2023-10-29 172046](https://github.com/Thani98/onlinegamingplatform/assets/148690401/1f5c030e-4eb8-4d5b-bc42-85bbbd2f31a6)
 
-After that I did the Prototype where I had many error 
+After that I did the Prototype where I had many errors.
+![Screenshot 2023-10-29 015257](https://github.com/Thani98/onlinegamingplatform/assets/148690401/9d044e62-c25f-42d7-9fd5-92cde5bd4def)
+
  
 
 
