@@ -16,5 +16,19 @@ The first section is about the store line were I will be explaining my project i
 ![natural-language-for-the-target-system](https://github.com/Thani98/onlinegamingplatform/assets/148690401/88982e8f-d11f-446c-94db-4396c727c4d6)
 This Image is showing the natura language. In the natural language I explained my project in a story line that showes each actor role.
 
-The second setp is doing the use Case digram were I shoud each actor and their jobes and it will be shown in the next image.
+The second setp is doing the Use Case Digram were I show each actor and the role and it will be shown in the next image.
 ![Screenshot 2023-10-29 015439](https://github.com/Thani98/onlinegamingplatform/assets/148690401/1054a454-5957-426f-9b82-f82788003459)
+
+Then after doing the Use Case Digram I did the System Sequence Diagram for every actor role. As shown in the image.
+![Screenshot-SSD_Diagram](https://github.com/Thani98/onlinegamingplatform/assets/148690401/0947dfff-c9e9-4efa-8f45-3e7c3e690db5)
+
+After doing the Use Case Digram, I did the Conceptual Class Diagram for Domain Model. As shown in the image.
+![Screenshot-Class_Diagram](https://github.com/Thani98/onlinegamingplatform/assets/148690401/a199b75a-b9e5-479d-8da7-738cd97b374b)
+
+Then did the Contract and did not know how to do it correctly so I did my best on doing them, as shown in the next image.
+![Screenshot 2023-10-29 172046](https://github.com/Thani98/onlinegamingplatform/assets/148690401/1f5c030e-4eb8-4d5b-bc42-85bbbd2f31a6)
+
+After that I did the Prototype where I had many error 
+ 
+
+
