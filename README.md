@@ -31,6 +31,21 @@ Then did the Contract and did not know how to do it correctly so I did my best o
 After that I did the Prototype where I had many errors.
 ![Screenshot 2023-10-29 015257](https://github.com/Thani98/onlinegamingplatform/assets/148690401/9d044e62-c25f-42d7-9fd5-92cde5bd4def)
 
+# Lab 3
+
+# The method of automatically generating architecture design from requirement models.
+which I did for my project and will be shown on the following pictures.
+![Screenshot lab3](https://github.com/Thani98/onlinegamingplatform/assets/148690401/ab9d72c9-40bc-4a97-a4c8-b3900a52f266)
+this will show the use case diagram
+![Screenshotlab31](https://github.com/Thani98/onlinegamingplatform/assets/148690401/09d8616a-415d-4c39-9b73-f25e118bb724)
+and this is showing the the class diagram
+![Screenshot 2023-11-19 164509](https://github.com/Thani98/onlinegamingplatform/assets/148690401/9308cac5-5779-4055-8804-ae478501bffb)
+
+
+
+
+
+
  
 
 
