@@ -1,0 +1,2021 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rEMODEL:RequirementModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rEMODEL="http://www.mydreamy.net/requirementmodel/REMODEL">
+  <UseCaseModel name="OnlineGamingPlatform">
+    <uc name="browseGames" label="&quot;browseGames&quot;">
+      <ssd href="onilnegamingplatform.remodel#|0"/>
+      <service href="onilnegamingplatform.remodel#|1"/>
+    </uc>
+    <uc name="searchGames" label="&quot;searchGames&quot;">
+      <ssd href="onilnegamingplatform.remodel#|2"/>
+      <service href="onilnegamingplatform.remodel#|3"/>
+    </uc>
+    <uc name="createProfile" label="&quot;createProfile&quot;">
+      <ssd href="onilnegamingplatform.remodel#|4"/>
+      <service href="onilnegamingplatform.remodel#|5"/>
+    </uc>
+    <uc name="playMultiplayerGames" label="&quot;playMultiplayerGames&quot;">
+      <ssd href="onilnegamingplatform.remodel#|6"/>
+      <service href="onilnegamingplatform.remodel#|7"/>
+    </uc>
+    <uc name="makePurchase" label="&quot;makePurchase&quot;">
+      <ssd href="onilnegamingplatform.remodel#|8"/>
+      <service href="onilnegamingplatform.remodel#|9"/>
+    </uc>
+    <uc name="addNewGame" label="&quot;addNewGame&quot;">
+      <ssd href="onilnegamingplatform.remodel#|10"/>
+      <service href="onilnegamingplatform.remodel#|11"/>
+    </uc>
+    <uc name="monitorplayers" label="&quot;monitorplayers&quot;">
+      <ssd href="onilnegamingplatform.remodel#|12"/>
+      <service href="onilnegamingplatform.remodel#|13"/>
+    </uc>
+    <uc name="promoteGames" label="&quot;promoteGames&quot;">
+      <ssd href="onilnegamingplatform.remodel#|14"/>
+      <service href="onilnegamingplatform.remodel#|15"/>
+    </uc>
+    <uc name="viewAnalytics" label="&quot;viewAnalytics&quot;">
+      <ssd href="onilnegamingplatform.remodel#|16"/>
+      <service href="onilnegamingplatform.remodel#|17"/>
+    </uc>
+    <actor name="Player" label="&quot;Player&quot;">
+      <uc href="onilnegamingplatform.remodel#|18"/>
+      <uc href="onilnegamingplatform.remodel#|19"/>
+      <uc href="onilnegamingplatform.remodel#|20"/>
+      <uc href="onilnegamingplatform.remodel#|21"/>
+      <uc href="onilnegamingplatform.remodel#|22"/>
+    </actor>
+    <actor name="GameDeveloper" label="&quot;GameDeveloper&quot;">
+      <uc href="onilnegamingplatform.remodel#|23"/>
+    </actor>
+    <actor name="GameModerator" label="&quot;GameModerator&quot;">
+      <uc href="onilnegamingplatform.remodel#|24"/>
+    </actor>
+    <actor name="MarketingManager" label="&quot;MarketingManager&quot;">
+      <uc href="onilnegamingplatform.remodel#|25"/>
+    </actor>
+    <actor name="BusinessManager" label="&quot;BusinessManager&quot;">
+      <uc href="onilnegamingplatform.remodel#|26"/>
+    </actor>
+    <interaction name="BrowseGamesSSD">
+      <participants href="onilnegamingplatform.remodel#|27"/>
+      <participants href="onilnegamingplatform.remodel#|28"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="BrowseGamesSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|30"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|31"/>
+        <op href="onilnegamingplatform.remodel#|29"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="sendGamesListing">
+        <sendingEnd href="onilnegamingplatform.remodel#|32"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|33"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|34"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="BrowseGamesSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|36"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|37"/>
+        <op href="onilnegamingplatform.remodel#|35"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="sessionJoined">
+        <sendingEnd href="onilnegamingplatform.remodel#|38"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|39"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|40"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="BrowseGamesSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|42"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|43"/>
+        <op href="onilnegamingplatform.remodel#|41"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="sessionClosed">
+        <sendingEnd href="onilnegamingplatform.remodel#|44"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|45"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|46"/>
+      </messages>
+      <executions name="BrowseGamesSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|47"/>
+        <start href="onilnegamingplatform.remodel#|48"/>
+        <end href="onilnegamingplatform.remodel#|49"/>
+      </executions>
+      <executions name="BrowseGamesSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|50"/>
+        <start href="onilnegamingplatform.remodel#|51"/>
+        <end href="onilnegamingplatform.remodel#|52"/>
+      </executions>
+      <executions name="BrowseGamesSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|53"/>
+        <start href="onilnegamingplatform.remodel#|54"/>
+        <end href="onilnegamingplatform.remodel#|55"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="BrowseGamesSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|56"/>
+        <message href="onilnegamingplatform.remodel#|57"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="BrowseGamesSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|58"/>
+        <execution href="onilnegamingplatform.remodel#|59"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="BrowseGamesSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|60"/>
+        <execution href="onilnegamingplatform.remodel#|61"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="BrowseGamesSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|62"/>
+        <message href="onilnegamingplatform.remodel#|63"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="BrowseGamesSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|64"/>
+        <message href="onilnegamingplatform.remodel#|65"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="BrowseGamesSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|66"/>
+        <execution href="onilnegamingplatform.remodel#|67"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="BrowseGamesSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|68"/>
+        <execution href="onilnegamingplatform.remodel#|69"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="BrowseGamesSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|70"/>
+        <message href="onilnegamingplatform.remodel#|71"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="BrowseGamesSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|72"/>
+        <message href="onilnegamingplatform.remodel#|73"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="BrowseGamesSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|74"/>
+        <execution href="onilnegamingplatform.remodel#|75"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="BrowseGamesSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|76"/>
+        <execution href="onilnegamingplatform.remodel#|77"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="BrowseGamesSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|78"/>
+        <message href="onilnegamingplatform.remodel#|79"/>
+      </ends>
+    </interaction>
+    <interaction name="AddNewGameSSD">
+      <participants href="onilnegamingplatform.remodel#|80"/>
+      <participants href="onilnegamingplatform.remodel#|81"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="AddNewGameSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|83"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|84"/>
+        <op href="onilnegamingplatform.remodel#|82"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="AddNewGameSSDCallMessage1Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|85"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|86"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|87"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="AddNewGameSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|89"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|90"/>
+        <op href="onilnegamingplatform.remodel#|88"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="AddNewGameSSDCallMessage3Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|91"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|92"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|93"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="AddNewGameSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|95"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|96"/>
+        <op href="onilnegamingplatform.remodel#|94"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="AddNewGameSSDCallMessage5Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|97"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|98"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|99"/>
+      </messages>
+      <executions name="AddNewGameSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|100"/>
+        <start href="onilnegamingplatform.remodel#|101"/>
+        <end href="onilnegamingplatform.remodel#|102"/>
+      </executions>
+      <executions name="AddNewGameSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|103"/>
+        <start href="onilnegamingplatform.remodel#|104"/>
+        <end href="onilnegamingplatform.remodel#|105"/>
+      </executions>
+      <executions name="AddNewGameSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|106"/>
+        <start href="onilnegamingplatform.remodel#|107"/>
+        <end href="onilnegamingplatform.remodel#|108"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="AddNewGameSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|109"/>
+        <message href="onilnegamingplatform.remodel#|110"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="AddNewGameSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|111"/>
+        <execution href="onilnegamingplatform.remodel#|112"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="AddNewGameSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|113"/>
+        <execution href="onilnegamingplatform.remodel#|114"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="AddNewGameSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|115"/>
+        <message href="onilnegamingplatform.remodel#|116"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="AddNewGameSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|117"/>
+        <message href="onilnegamingplatform.remodel#|118"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="AddNewGameSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|119"/>
+        <execution href="onilnegamingplatform.remodel#|120"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="AddNewGameSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|121"/>
+        <execution href="onilnegamingplatform.remodel#|122"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="AddNewGameSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|123"/>
+        <message href="onilnegamingplatform.remodel#|124"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="AddNewGameSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|125"/>
+        <message href="onilnegamingplatform.remodel#|126"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="AddNewGameSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|127"/>
+        <execution href="onilnegamingplatform.remodel#|128"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="AddNewGameSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|129"/>
+        <execution href="onilnegamingplatform.remodel#|130"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="AddNewGameSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|131"/>
+        <message href="onilnegamingplatform.remodel#|132"/>
+      </ends>
+    </interaction>
+    <interaction name="SearchGamesSSD">
+      <participants href="onilnegamingplatform.remodel#|133"/>
+      <participants href="onilnegamingplatform.remodel#|134"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="SearchGamesSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|136"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|137"/>
+        <op href="onilnegamingplatform.remodel#|135"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="sendGamesResults">
+        <sendingEnd href="onilnegamingplatform.remodel#|138"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|139"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|140"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="SearchGamesSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|142"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|143"/>
+        <op href="onilnegamingplatform.remodel#|141"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="loadGame">
+        <sendingEnd href="onilnegamingplatform.remodel#|144"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|145"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|146"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="SearchGamesSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|148"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|149"/>
+        <op href="onilnegamingplatform.remodel#|147"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="unloadGame">
+        <sendingEnd href="onilnegamingplatform.remodel#|150"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|151"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|152"/>
+      </messages>
+      <executions name="SearchGamesSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|153"/>
+        <start href="onilnegamingplatform.remodel#|154"/>
+        <end href="onilnegamingplatform.remodel#|155"/>
+      </executions>
+      <executions name="SearchGamesSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|156"/>
+        <start href="onilnegamingplatform.remodel#|157"/>
+        <end href="onilnegamingplatform.remodel#|158"/>
+      </executions>
+      <executions name="SearchGamesSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|159"/>
+        <start href="onilnegamingplatform.remodel#|160"/>
+        <end href="onilnegamingplatform.remodel#|161"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="SearchGamesSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|162"/>
+        <message href="onilnegamingplatform.remodel#|163"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="SearchGamesSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|164"/>
+        <execution href="onilnegamingplatform.remodel#|165"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="SearchGamesSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|166"/>
+        <execution href="onilnegamingplatform.remodel#|167"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="SearchGamesSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|168"/>
+        <message href="onilnegamingplatform.remodel#|169"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="SearchGamesSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|170"/>
+        <message href="onilnegamingplatform.remodel#|171"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="SearchGamesSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|172"/>
+        <execution href="onilnegamingplatform.remodel#|173"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="SearchGamesSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|174"/>
+        <execution href="onilnegamingplatform.remodel#|175"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="SearchGamesSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|176"/>
+        <message href="onilnegamingplatform.remodel#|177"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="SearchGamesSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|178"/>
+        <message href="onilnegamingplatform.remodel#|179"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="SearchGamesSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|180"/>
+        <execution href="onilnegamingplatform.remodel#|181"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="SearchGamesSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|182"/>
+        <execution href="onilnegamingplatform.remodel#|183"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="SearchGamesSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|184"/>
+        <message href="onilnegamingplatform.remodel#|185"/>
+      </ends>
+    </interaction>
+    <interaction name="CreateProfileSSD">
+      <participants href="onilnegamingplatform.remodel#|186"/>
+      <participants href="onilnegamingplatform.remodel#|187"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="CreateProfileSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|189"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|190"/>
+        <op href="onilnegamingplatform.remodel#|188"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="accountCreated">
+        <sendingEnd href="onilnegamingplatform.remodel#|191"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|192"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|193"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="CreateProfileSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|195"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|196"/>
+        <op href="onilnegamingplatform.remodel#|194"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="playerProfileCreated">
+        <sendingEnd href="onilnegamingplatform.remodel#|197"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|198"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|199"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="CreateProfileSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|201"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|202"/>
+        <op href="onilnegamingplatform.remodel#|200"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="profileCustomized">
+        <sendingEnd href="onilnegamingplatform.remodel#|203"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|204"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|205"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="CreateProfileSSDCallMessage7">
+        <sendingEnd href="onilnegamingplatform.remodel#|207"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|208"/>
+        <op href="onilnegamingplatform.remodel#|206"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="registrationComplete">
+        <sendingEnd href="onilnegamingplatform.remodel#|209"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|210"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|211"/>
+      </messages>
+      <executions name="CreateProfileSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|212"/>
+        <start href="onilnegamingplatform.remodel#|213"/>
+        <end href="onilnegamingplatform.remodel#|214"/>
+      </executions>
+      <executions name="CreateProfileSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|215"/>
+        <start href="onilnegamingplatform.remodel#|216"/>
+        <end href="onilnegamingplatform.remodel#|217"/>
+      </executions>
+      <executions name="CreateProfileSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|218"/>
+        <start href="onilnegamingplatform.remodel#|219"/>
+        <end href="onilnegamingplatform.remodel#|220"/>
+      </executions>
+      <executions name="CreateProfileSSDExecution4">
+        <owner href="onilnegamingplatform.remodel#|221"/>
+        <start href="onilnegamingplatform.remodel#|222"/>
+        <end href="onilnegamingplatform.remodel#|223"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|224"/>
+        <message href="onilnegamingplatform.remodel#|225"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|226"/>
+        <execution href="onilnegamingplatform.remodel#|227"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|228"/>
+        <execution href="onilnegamingplatform.remodel#|229"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|230"/>
+        <message href="onilnegamingplatform.remodel#|231"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|232"/>
+        <message href="onilnegamingplatform.remodel#|233"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|234"/>
+        <execution href="onilnegamingplatform.remodel#|235"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|236"/>
+        <execution href="onilnegamingplatform.remodel#|237"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|238"/>
+        <message href="onilnegamingplatform.remodel#|239"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|240"/>
+        <message href="onilnegamingplatform.remodel#|241"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|242"/>
+        <execution href="onilnegamingplatform.remodel#|243"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|244"/>
+        <execution href="onilnegamingplatform.remodel#|245"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|246"/>
+        <message href="onilnegamingplatform.remodel#|247"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage7SendingEnd">
+        <context href="onilnegamingplatform.remodel#|248"/>
+        <message href="onilnegamingplatform.remodel#|249"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution4StartEnd">
+        <context href="onilnegamingplatform.remodel#|250"/>
+        <execution href="onilnegamingplatform.remodel#|251"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="CreateProfileSSDExecution4FinishEnd">
+        <context href="onilnegamingplatform.remodel#|252"/>
+        <execution href="onilnegamingplatform.remodel#|253"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="CreateProfileSSDCallMessage7ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|254"/>
+        <message href="onilnegamingplatform.remodel#|255"/>
+      </ends>
+    </interaction>
+    <interaction name="PlayMultiplayerGamesSSD">
+      <participants href="onilnegamingplatform.remodel#|256"/>
+      <participants href="onilnegamingplatform.remodel#|257"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="PlayMultiplayerGamesSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|259"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|260"/>
+        <op href="onilnegamingplatform.remodel#|258"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="listGames">
+        <sendingEnd href="onilnegamingplatform.remodel#|261"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|262"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|263"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="PlayMultiplayerGamesSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|265"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|266"/>
+        <op href="onilnegamingplatform.remodel#|264"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="PlayMultiplayerGamesSSDCallMessage3Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|267"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|268"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|269"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="PlayMultiplayerGamesSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|271"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|272"/>
+        <op href="onilnegamingplatform.remodel#|270"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="PlayMultiplayerGamesSSDCallMessage5Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|273"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|274"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|275"/>
+      </messages>
+      <executions name="PlayMultiplayerGamesSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|276"/>
+        <start href="onilnegamingplatform.remodel#|277"/>
+        <end href="onilnegamingplatform.remodel#|278"/>
+      </executions>
+      <executions name="PlayMultiplayerGamesSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|279"/>
+        <start href="onilnegamingplatform.remodel#|280"/>
+        <end href="onilnegamingplatform.remodel#|281"/>
+      </executions>
+      <executions name="PlayMultiplayerGamesSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|282"/>
+        <start href="onilnegamingplatform.remodel#|283"/>
+        <end href="onilnegamingplatform.remodel#|284"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PlayMultiplayerGamesSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|285"/>
+        <message href="onilnegamingplatform.remodel#|286"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PlayMultiplayerGamesSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|287"/>
+        <execution href="onilnegamingplatform.remodel#|288"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PlayMultiplayerGamesSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|289"/>
+        <execution href="onilnegamingplatform.remodel#|290"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PlayMultiplayerGamesSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|291"/>
+        <message href="onilnegamingplatform.remodel#|292"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PlayMultiplayerGamesSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|293"/>
+        <message href="onilnegamingplatform.remodel#|294"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PlayMultiplayerGamesSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|295"/>
+        <execution href="onilnegamingplatform.remodel#|296"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PlayMultiplayerGamesSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|297"/>
+        <execution href="onilnegamingplatform.remodel#|298"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PlayMultiplayerGamesSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|299"/>
+        <message href="onilnegamingplatform.remodel#|300"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PlayMultiplayerGamesSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|301"/>
+        <message href="onilnegamingplatform.remodel#|302"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PlayMultiplayerGamesSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|303"/>
+        <execution href="onilnegamingplatform.remodel#|304"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PlayMultiplayerGamesSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|305"/>
+        <execution href="onilnegamingplatform.remodel#|306"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PlayMultiplayerGamesSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|307"/>
+        <message href="onilnegamingplatform.remodel#|308"/>
+      </ends>
+    </interaction>
+    <interaction name="MakePurchaseSSD">
+      <participants href="onilnegamingplatform.remodel#|309"/>
+      <participants href="onilnegamingplatform.remodel#|310"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="MakePurchaseSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|312"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|313"/>
+        <op href="onilnegamingplatform.remodel#|311"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="showOffering">
+        <sendingEnd href="onilnegamingplatform.remodel#|314"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|315"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|316"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="MakePurchaseSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|318"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|319"/>
+        <op href="onilnegamingplatform.remodel#|317"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="MakePurchaseSSDCallMessage3Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|320"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|321"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|322"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="MakePurchaseSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|324"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|325"/>
+        <op href="onilnegamingplatform.remodel#|323"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="MakePurchaseSSDCallMessage5Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|326"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|327"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|328"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="MakePurchaseSSDCallMessage7">
+        <sendingEnd href="onilnegamingplatform.remodel#|330"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|331"/>
+        <op href="onilnegamingplatform.remodel#|329"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="MakePurchaseSSDCallMessage7Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|332"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|333"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|334"/>
+      </messages>
+      <executions name="MakePurchaseSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|335"/>
+        <start href="onilnegamingplatform.remodel#|336"/>
+        <end href="onilnegamingplatform.remodel#|337"/>
+      </executions>
+      <executions name="MakePurchaseSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|338"/>
+        <start href="onilnegamingplatform.remodel#|339"/>
+        <end href="onilnegamingplatform.remodel#|340"/>
+      </executions>
+      <executions name="MakePurchaseSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|341"/>
+        <start href="onilnegamingplatform.remodel#|342"/>
+        <end href="onilnegamingplatform.remodel#|343"/>
+      </executions>
+      <executions name="MakePurchaseSSDExecution4">
+        <owner href="onilnegamingplatform.remodel#|344"/>
+        <start href="onilnegamingplatform.remodel#|345"/>
+        <end href="onilnegamingplatform.remodel#|346"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|347"/>
+        <message href="onilnegamingplatform.remodel#|348"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|349"/>
+        <execution href="onilnegamingplatform.remodel#|350"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|351"/>
+        <execution href="onilnegamingplatform.remodel#|352"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|353"/>
+        <message href="onilnegamingplatform.remodel#|354"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|355"/>
+        <message href="onilnegamingplatform.remodel#|356"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|357"/>
+        <execution href="onilnegamingplatform.remodel#|358"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|359"/>
+        <execution href="onilnegamingplatform.remodel#|360"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|361"/>
+        <message href="onilnegamingplatform.remodel#|362"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|363"/>
+        <message href="onilnegamingplatform.remodel#|364"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|365"/>
+        <execution href="onilnegamingplatform.remodel#|366"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|367"/>
+        <execution href="onilnegamingplatform.remodel#|368"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|369"/>
+        <message href="onilnegamingplatform.remodel#|370"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage7SendingEnd">
+        <context href="onilnegamingplatform.remodel#|371"/>
+        <message href="onilnegamingplatform.remodel#|372"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution4StartEnd">
+        <context href="onilnegamingplatform.remodel#|373"/>
+        <execution href="onilnegamingplatform.remodel#|374"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MakePurchaseSSDExecution4FinishEnd">
+        <context href="onilnegamingplatform.remodel#|375"/>
+        <execution href="onilnegamingplatform.remodel#|376"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MakePurchaseSSDCallMessage7ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|377"/>
+        <message href="onilnegamingplatform.remodel#|378"/>
+      </ends>
+    </interaction>
+    <interaction name="MonitorplayersSSD">
+      <participants href="onilnegamingplatform.remodel#|379"/>
+      <participants href="onilnegamingplatform.remodel#|380"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="MonitorplayersSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|382"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|383"/>
+        <op href="onilnegamingplatform.remodel#|381"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="MonitorplayersSSDCallMessage1Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|384"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|385"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|386"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="MonitorplayersSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|388"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|389"/>
+        <op href="onilnegamingplatform.remodel#|387"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="MonitorplayersSSDCallMessage3Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|390"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|391"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|392"/>
+      </messages>
+      <executions name="MonitorplayersSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|393"/>
+        <start href="onilnegamingplatform.remodel#|394"/>
+        <end href="onilnegamingplatform.remodel#|395"/>
+      </executions>
+      <executions name="MonitorplayersSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|396"/>
+        <start href="onilnegamingplatform.remodel#|397"/>
+        <end href="onilnegamingplatform.remodel#|398"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MonitorplayersSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|399"/>
+        <message href="onilnegamingplatform.remodel#|400"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MonitorplayersSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|401"/>
+        <execution href="onilnegamingplatform.remodel#|402"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MonitorplayersSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|403"/>
+        <execution href="onilnegamingplatform.remodel#|404"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MonitorplayersSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|405"/>
+        <message href="onilnegamingplatform.remodel#|406"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MonitorplayersSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|407"/>
+        <message href="onilnegamingplatform.remodel#|408"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MonitorplayersSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|409"/>
+        <execution href="onilnegamingplatform.remodel#|410"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="MonitorplayersSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|411"/>
+        <execution href="onilnegamingplatform.remodel#|412"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="MonitorplayersSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|413"/>
+        <message href="onilnegamingplatform.remodel#|414"/>
+      </ends>
+    </interaction>
+    <interaction name="PromoteGamesSSD">
+      <participants href="onilnegamingplatform.remodel#|415"/>
+      <participants href="onilnegamingplatform.remodel#|416"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="PromoteGamesSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|418"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|419"/>
+        <op href="onilnegamingplatform.remodel#|417"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="PromoteGamesSSDCallMessage1Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|420"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|421"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|422"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="PromoteGamesSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|424"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|425"/>
+        <op href="onilnegamingplatform.remodel#|423"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="PromoteGamesSSDCallMessage3Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|426"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|427"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|428"/>
+      </messages>
+      <executions name="PromoteGamesSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|429"/>
+        <start href="onilnegamingplatform.remodel#|430"/>
+        <end href="onilnegamingplatform.remodel#|431"/>
+      </executions>
+      <executions name="PromoteGamesSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|432"/>
+        <start href="onilnegamingplatform.remodel#|433"/>
+        <end href="onilnegamingplatform.remodel#|434"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PromoteGamesSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|435"/>
+        <message href="onilnegamingplatform.remodel#|436"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PromoteGamesSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|437"/>
+        <execution href="onilnegamingplatform.remodel#|438"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PromoteGamesSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|439"/>
+        <execution href="onilnegamingplatform.remodel#|440"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PromoteGamesSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|441"/>
+        <message href="onilnegamingplatform.remodel#|442"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PromoteGamesSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|443"/>
+        <message href="onilnegamingplatform.remodel#|444"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PromoteGamesSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|445"/>
+        <execution href="onilnegamingplatform.remodel#|446"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="PromoteGamesSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|447"/>
+        <execution href="onilnegamingplatform.remodel#|448"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="PromoteGamesSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|449"/>
+        <message href="onilnegamingplatform.remodel#|450"/>
+      </ends>
+    </interaction>
+    <interaction name="ViewAnalyticsSSD">
+      <participants href="onilnegamingplatform.remodel#|451"/>
+      <participants href="onilnegamingplatform.remodel#|452"/>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAnalyticsSSDCallMessage1">
+        <sendingEnd href="onilnegamingplatform.remodel#|454"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|455"/>
+        <op href="onilnegamingplatform.remodel#|453"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAnalyticsSSDCallMessage1Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|456"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|457"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|458"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAnalyticsSSDCallMessage3">
+        <sendingEnd href="onilnegamingplatform.remodel#|460"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|461"/>
+        <op href="onilnegamingplatform.remodel#|459"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAnalyticsSSDCallMessage3Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|462"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|463"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|464"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAnalyticsSSDCallMessage5">
+        <sendingEnd href="onilnegamingplatform.remodel#|466"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|467"/>
+        <op href="onilnegamingplatform.remodel#|465"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAnalyticsSSDCallMessage5Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|468"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|469"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|470"/>
+      </messages>
+      <messages xsi:type="rEMODEL:CallMessage" name="ViewAnalyticsSSDCallMessage7">
+        <sendingEnd href="onilnegamingplatform.remodel#|472"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|473"/>
+        <op href="onilnegamingplatform.remodel#|471"/>
+      </messages>
+      <messages xsi:type="rEMODEL:ReturnMessage" name="ViewAnalyticsSSDCallMessage7Return">
+        <sendingEnd href="onilnegamingplatform.remodel#|474"/>
+        <receivingEnd href="onilnegamingplatform.remodel#|475"/>
+        <invocationMessage href="onilnegamingplatform.remodel#|476"/>
+      </messages>
+      <executions name="ViewAnalyticsSSDExecution1">
+        <owner href="onilnegamingplatform.remodel#|477"/>
+        <start href="onilnegamingplatform.remodel#|478"/>
+        <end href="onilnegamingplatform.remodel#|479"/>
+      </executions>
+      <executions name="ViewAnalyticsSSDExecution2">
+        <owner href="onilnegamingplatform.remodel#|480"/>
+        <start href="onilnegamingplatform.remodel#|481"/>
+        <end href="onilnegamingplatform.remodel#|482"/>
+      </executions>
+      <executions name="ViewAnalyticsSSDExecution3">
+        <owner href="onilnegamingplatform.remodel#|483"/>
+        <start href="onilnegamingplatform.remodel#|484"/>
+        <end href="onilnegamingplatform.remodel#|485"/>
+      </executions>
+      <executions name="ViewAnalyticsSSDExecution4">
+        <owner href="onilnegamingplatform.remodel#|486"/>
+        <start href="onilnegamingplatform.remodel#|487"/>
+        <end href="onilnegamingplatform.remodel#|488"/>
+      </executions>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage1SendingEnd">
+        <context href="onilnegamingplatform.remodel#|489"/>
+        <message href="onilnegamingplatform.remodel#|490"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution1StartEnd">
+        <context href="onilnegamingplatform.remodel#|491"/>
+        <execution href="onilnegamingplatform.remodel#|492"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution1FinishEnd">
+        <context href="onilnegamingplatform.remodel#|493"/>
+        <execution href="onilnegamingplatform.remodel#|494"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage1ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|495"/>
+        <message href="onilnegamingplatform.remodel#|496"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage3SendingEnd">
+        <context href="onilnegamingplatform.remodel#|497"/>
+        <message href="onilnegamingplatform.remodel#|498"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution2StartEnd">
+        <context href="onilnegamingplatform.remodel#|499"/>
+        <execution href="onilnegamingplatform.remodel#|500"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution2FinishEnd">
+        <context href="onilnegamingplatform.remodel#|501"/>
+        <execution href="onilnegamingplatform.remodel#|502"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage3ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|503"/>
+        <message href="onilnegamingplatform.remodel#|504"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage5SendingEnd">
+        <context href="onilnegamingplatform.remodel#|505"/>
+        <message href="onilnegamingplatform.remodel#|506"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution3StartEnd">
+        <context href="onilnegamingplatform.remodel#|507"/>
+        <execution href="onilnegamingplatform.remodel#|508"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution3FinishEnd">
+        <context href="onilnegamingplatform.remodel#|509"/>
+        <execution href="onilnegamingplatform.remodel#|510"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage5ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|511"/>
+        <message href="onilnegamingplatform.remodel#|512"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage7SendingEnd">
+        <context href="onilnegamingplatform.remodel#|513"/>
+        <message href="onilnegamingplatform.remodel#|514"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution4StartEnd">
+        <context href="onilnegamingplatform.remodel#|515"/>
+        <execution href="onilnegamingplatform.remodel#|516"/>
+      </ends>
+      <ends xsi:type="rEMODEL:ExecutionEnd" name="ViewAnalyticsSSDExecution4FinishEnd">
+        <context href="onilnegamingplatform.remodel#|517"/>
+        <execution href="onilnegamingplatform.remodel#|518"/>
+      </ends>
+      <ends xsi:type="rEMODEL:MessageEnd" name="ViewAnalyticsSSDCallMessage7ReturnReceivingEnd">
+        <context href="onilnegamingplatform.remodel#|519"/>
+        <message href="onilnegamingplatform.remodel#|520"/>
+      </ends>
+    </interaction>
+    <service name="OnlineGamingPlatformSystem">
+      <operation name="newGame"/>
+      <operation name="monitorplayers"/>
+      <operation name="promoteGames"/>
+      <operation name="viewAnalytics"/>
+    </service>
+    <service name="ThirdPartyServices"/>
+    <service name="BrowseGamesService">
+      <operation name="browseAvailableGames"/>
+      <operation name="joinGameSession"/>
+      <operation name="leaveGameSession"/>
+    </service>
+    <service name="AddNewGameService">
+      <operation name="submitNewGame">
+        <parameter name="releasingNewGame"/>
+      </operation>
+      <operation name="testingGame"/>
+      <operation name="addGameToStore"/>
+    </service>
+    <service name="SearchGamesService">
+      <operation name="searchForGames"/>
+      <operation name="startNewGame"/>
+      <operation name="endGame"/>
+    </service>
+    <service name="CreateProfileService">
+      <operation name="enterRegistrationDetails"/>
+      <operation name="createPlayerProfile"/>
+      <operation name="customizeProfile"/>
+      <operation name="completeRegistration"/>
+    </service>
+    <service name="PlayMultiplayerGamesService">
+      <operation name="searchMultiplayerGames">
+        <parameter name="browseGames"/>
+      </operation>
+      <operation name="joiningGameSession">
+        <parameter name="gamejoined"/>
+      </operation>
+      <operation name="endGameSession">
+        <parameter name="sessionEnded"/>
+      </operation>
+    </service>
+    <service name="MakePurchaseService">
+      <operation name="viewPurchaseOptions">
+        <parameter name="lookingForGame"/>
+      </operation>
+      <operation name="selectItemToPurchase">
+        <parameter name="chooseingGame"/>
+      </operation>
+      <operation name="enterPaymentDetails">
+        <parameter name="toMakePurchase"/>
+      </operation>
+      <operation name="completePurchase">
+        <parameter name="purchaseMade"/>
+      </operation>
+    </service>
+    <service name="MonitorplayersService">
+      <operation name="reviewActivity">
+        <parameter name="reviewIssue"/>
+      </operation>
+      <operation name="scanChat"/>
+    </service>
+    <service name="PromoteGamesService">
+      <operation name="postGameTrailer"/>
+      <operation name="runAdCampaign"/>
+    </service>
+    <service name="ViewAnalyticsService">
+      <operation name="getPlayerActivity"/>
+      <operation name="getUserEngagenent"/>
+      <operation name="getReveueReports"/>
+      <operation name="analyzePlayerRetention"/>
+    </service>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|521"/>
+      <op name="searchGames">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="sg">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="onilnegamingplatform.remodel#|522"/>
+          </type>
+          <initExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:IteratorExpCS" iterator="any">
+                <objectCall xsi:type="rEMODEL:ClassiferCallExpCS" entity="Player" op="allInstance()"/>
+                <varibles name="s">
+                  <type xsi:type="rEMODEL:EntityType">
+                    <entity href="onilnegamingplatform.remodel#|523"/>
+                  </type>
+                </varibles>
+                <exp xsi:type="rEMODEL:LogicFormulaExpCS">
+                  <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                    <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="username">
+                      <name symbol="s"/>
+                    </leftside>
+                    <rightside xsi:type="rEMODEL:StringLiteralExpCS" symbol="&quot;Player1&quot;"/>
+                  </atomicexp>
+                </exp>
+              </leftside>
+            </atomicexp>
+          </initExpression>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:IfExpCS">
+          <condition xsi:type="rEMODEL:NestedExpCS">
+            <nestedExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+              <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+                  <object symbol="sg"/>
+                  <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+                </leftside>
+                <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+              </atomicexp>
+            </nestedExpression>
+          </condition>
+          <thenExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Game1">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="username">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="sg"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+            <connector>and</connector>
+          </thenExpression>
+          <elseExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Game1">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+            </atomicexp>
+            <connector>and</connector>
+          </elseExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|524"/>
+      <op name="searchMultiplayerGames">
+        <parameter name="browseGames">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="sm">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="onilnegamingplatform.remodel#|525"/>
+          </type>
+          <initExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:IteratorExpCS" iterator="any">
+                <objectCall xsi:type="rEMODEL:ClassiferCallExpCS" entity="Player" op="allInstance()"/>
+                <varibles name="s">
+                  <type xsi:type="rEMODEL:EntityType">
+                    <entity href="onilnegamingplatform.remodel#|526"/>
+                  </type>
+                </varibles>
+                <exp xsi:type="rEMODEL:LogicFormulaExpCS">
+                  <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                    <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Multiplayer">
+                      <name symbol="s"/>
+                    </leftside>
+                    <rightside xsi:type="rEMODEL:StringLiteralExpCS" symbol="&quot;Playeres&quot;"/>
+                  </atomicexp>
+                </exp>
+              </leftside>
+            </atomicexp>
+          </initExpression>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="browseGames">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="self"/>
+              <property symbol="browseGames"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:IfExpCS">
+          <condition xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Password">
+                <name symbol="self"/>
+                <selfproperty symbol="InputPass"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="password"/>
+            </atomicexp>
+          </condition>
+          <thenExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="PasswordValidated">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="return"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+          </thenExpression>
+          <elseExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="PasswordValidated">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="return"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+            </atomicexp>
+            <connector>and</connector>
+          </elseExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|527"/>
+      <op name="joinGameSession">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="JoinGame">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="ValidateGame">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="self"/>
+              <property symbol="StartGame"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:IfExpCS">
+          <condition xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="IsJoined">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+          </condition>
+          <thenExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameJoined">
+                <name symbol="self"/>
+              </rightside>
+            </atomicexp>
+          </thenExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|528"/>
+      <op name="browseAvailableGames">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="bg">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="onilnegamingplatform.remodel#|529"/>
+          </type>
+          <initExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:IteratorExpCS" iterator="any">
+                <objectCall xsi:type="rEMODEL:ClassiferCallExpCS" entity="Player" op="allInstance()"/>
+                <varibles name="b">
+                  <type xsi:type="rEMODEL:EntityType">
+                    <entity href="onilnegamingplatform.remodel#|530"/>
+                  </type>
+                </varibles>
+                <exp xsi:type="rEMODEL:LogicFormulaExpCS">
+                  <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                    <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameName">
+                      <name symbol="b"/>
+                    </leftside>
+                    <rightside xsi:type="rEMODEL:StringLiteralExpCS" symbol="&quot;Games&quot;"/>
+                  </atomicexp>
+                </exp>
+              </leftside>
+            </atomicexp>
+          </initExpression>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameValidated">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameNameValidated">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="self"/>
+              <property symbol="InputGameName"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameName">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:NullLiteralExpCS" symbol="null"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameNameValidated">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameValidated">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="IsFound">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="IsAvailable">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+          <connector>and</connector>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|531"/>
+      <op name="leaveGameSession">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:IfExpCS">
+          <condition xsi:type="rEMODEL:NestedExpCS">
+            <nestedExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+              <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+                  <object symbol="bc"/>
+                  <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+                </leftside>
+                <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+              </atomicexp>
+            </nestedExpression>
+          </condition>
+          <thenExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="SessionIDValidated">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="leaveSession">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="bc"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+            <connector>and</connector>
+          </thenExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|532"/>
+      <op name="searchForGames">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="sh">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="onilnegamingplatform.remodel#|533"/>
+          </type>
+          <initExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:IteratorExpCS" iterator="any">
+                <objectCall xsi:type="rEMODEL:ClassiferCallExpCS" entity="Player" op="allInstance()"/>
+                <varibles name="s">
+                  <type xsi:type="rEMODEL:EntityType">
+                    <entity href="onilnegamingplatform.remodel#|534"/>
+                  </type>
+                </varibles>
+                <exp xsi:type="rEMODEL:LogicFormulaExpCS">
+                  <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                    <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameName">
+                      <name symbol="s"/>
+                    </leftside>
+                    <rightside xsi:type="rEMODEL:StringLiteralExpCS" symbol="&quot;Games&quot;"/>
+                  </atomicexp>
+                </exp>
+              </leftside>
+            </atomicexp>
+          </initExpression>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|535"/>
+      <op name="startNewGame">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="StartGame">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="GameValidated">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="self"/>
+              <property symbol="GameStarting"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|536"/>
+      <op name="endGame">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:LogicFormulaExpCS">
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="EndGame">
+              <name symbol="self"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+          </atomicexp>
+          <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+            <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+              <object symbol="self"/>
+              <property symbol="EndingGame"/>
+              <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+            </leftside>
+            <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+          </atomicexp>
+          <connector>and</connector>
+        </oclexp>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|537"/>
+      <op name="enterRegistrationDetails">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <def>
+        <variable name="cf">
+          <type xsi:type="rEMODEL:EntityType">
+            <entity href="onilnegamingplatform.remodel#|538"/>
+          </type>
+          <initExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression">
+              <leftside xsi:type="rEMODEL:IteratorExpCS" iterator="any">
+                <objectCall xsi:type="rEMODEL:ClassiferCallExpCS" entity="Player" op="allInstance()"/>
+                <varibles name="c">
+                  <type xsi:type="rEMODEL:EntityType">
+                    <entity href="onilnegamingplatform.remodel#|539"/>
+                  </type>
+                </varibles>
+                <exp xsi:type="rEMODEL:LogicFormulaExpCS">
+                  <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                    <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="Profile">
+                      <name symbol="c"/>
+                    </leftside>
+                    <rightside xsi:type="rEMODEL:StringLiteralExpCS" symbol="&quot;Registration&quot;"/>
+                  </atomicexp>
+                </exp>
+              </leftside>
+            </atomicexp>
+          </initExpression>
+        </variable>
+      </def>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:IfExpCS">
+          <condition xsi:type="rEMODEL:NestedExpCS">
+            <nestedExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+              <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+                <leftside xsi:type="rEMODEL:StandardOperationExpCS">
+                  <object symbol="sh"/>
+                  <predefinedop xsi:type="rEMODEL:StandardNoneParameterOperation" name="oclIsUndefined()"/>
+                </leftside>
+                <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+              </atomicexp>
+            </nestedExpression>
+          </condition>
+          <thenExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="UsernameValidated">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="InputUsername">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:VariableExpCS" symbol="sh"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+            </atomicexp>
+            <connector>and</connector>
+            <connector>and</connector>
+          </thenExpression>
+          <elseExpression xsi:type="rEMODEL:LogicFormulaExpCS">
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:PropertyCallExpCS" attribute="PrpfileValidated">
+                <name symbol="self"/>
+              </leftside>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+            </atomicexp>
+            <atomicexp xsi:type="rEMODEL:AtomicExpression" infixop="=">
+              <leftside xsi:type="rEMODEL:VariableExpCS" symbol="result"/>
+              <rightside xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="false"/>
+            </atomicexp>
+            <connector>and</connector>
+          </elseExpression>
+        </oclexp>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|540"/>
+      <op name="createPlayerProfile">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|541"/>
+      <op name="customizeProfile">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|542"/>
+      <op name="completeRegistration">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|543"/>
+      <op name="newGame">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|544"/>
+      <op name="monitorplayers">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|545"/>
+      <op name="promoteGames">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|546"/>
+      <op name="viewAnalytics">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|547"/>
+      <op name="joiningGameSession">
+        <parameter name="gamejoined">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|548"/>
+      <op name="endGameSession">
+        <parameter name="sessionEnded">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|549"/>
+      <op name="viewPurchaseOptions">
+        <parameter name="lookingForGame">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|550"/>
+      <op name="selectItemToPurchase">
+        <parameter name="chooseingGame">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|551"/>
+      <op name="enterPaymentDetails">
+        <parameter name="toMakePurchase">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|552"/>
+      <op name="completePurchase">
+        <parameter name="purchaseMade">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|553"/>
+      <op name="submitNewGame">
+        <parameter name="releasingNewGame">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|554"/>
+      <op name="testingGame">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|555"/>
+      <op name="addGameToStore">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|556"/>
+      <op name="reviewActivity">
+        <parameter name="reviewIssue">
+          <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+        </parameter>
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|557"/>
+      <op name="scanChat">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|558"/>
+      <op name="postGameTrailer">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|559"/>
+      <op name="runAdCampaign">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|560"/>
+      <op name="getPlayerActivity">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|561"/>
+      <op name="getUserEngagenent">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|562"/>
+      <op name="getReveueReports">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+    <contract>
+      <service href="onilnegamingplatform.remodel#|563"/>
+      <op name="analyzePlayerRetention">
+        <returnType xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </op>
+      <pre>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </pre>
+      <post>
+        <oclexp xsi:type="rEMODEL:BooleanLiteralExpCS" symbol="true"/>
+      </post>
+    </contract>
+  </UseCaseModel>
+  <DomainModel name="OnilneGamingPlatform">
+    <entity name="GameModerator">
+      <attributes name="ModId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="ModPassword">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Integer"/>
+      </attributes>
+      <reference name="Monitors" ismultiple="true" type="Association">
+        <entity href="onilnegamingplatform.remodel#|564"/>
+      </reference>
+    </entity>
+    <entity name="Player">
+      <attributes name="Username">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Password">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Integer"/>
+      </attributes>
+      <attributes name="GamingProfile">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="BrowseGames">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </attributes>
+      <attributes name="InterGame">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </attributes>
+      <reference name="Information" isReverseAssoication="true" type="Aggregation">
+        <entity href="onilnegamingplatform.remodel#|565"/>
+      </reference>
+      <reference name="SignUp" type="Association">
+        <entity href="onilnegamingplatform.remodel#|566"/>
+      </reference>
+      <reference name="Playes" ismultiple="true" type="Association">
+        <entity href="onilnegamingplatform.remodel#|567"/>
+      </reference>
+    </entity>
+    <entity name="GamingProfile">
+      <attributes name="Achievements">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Friends">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="GameHistory">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="SaveData" isReverseAssoication="true" type="Association">
+        <entity href="onilnegamingplatform.remodel#|568"/>
+      </reference>
+    </entity>
+    <entity name="Game">
+      <attributes name="Title">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Genre">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Rating">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="PlayedBy" isReverseAssoication="true" type="Association">
+        <entity href="onilnegamingplatform.remodel#|569"/>
+      </reference>
+    </entity>
+    <entity name="GameDeveloper">
+      <attributes name="DevId">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="DevPassword">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Integer"/>
+      </attributes>
+      <attributes name="AddNewGames">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Boolean"/>
+      </attributes>
+      <reference name="DevelopsGames" ismultiple="true" type="Association">
+        <entity href="onilnegamingplatform.remodel#|570"/>
+      </reference>
+    </entity>
+    <entity name="BusinessManager">
+      <attributes name="ViewAnalytics">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="TrackRevenue">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <reference name="Manages" type="Association">
+        <entity href="onilnegamingplatform.remodel#|571"/>
+      </reference>
+    </entity>
+    <entity name="Platform">
+      <attributes name="Games">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Players">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Moderators">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="Developers">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="String"/>
+      </attributes>
+      <attributes name="UsageAnalytics">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Real"/>
+      </attributes>
+      <attributes name="RevenueAnalytics">
+        <type xsi:type="rEMODEL:PrimitiveTypeCS" name="Real"/>
+      </attributes>
+    </entity>
+  </DomainModel>
+</rEMODEL:RequirementModel>

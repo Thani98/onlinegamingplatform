@@ -1,0 +1,156 @@
+MicroServiceModel OnlineGamingPlatform {
+	MicroService PlayerService {
+		ProvidedInterface browseGames{
+			[Operation]
+			browseGames
+		}
+		ProvidedInterface searchGames{
+			[Operation]
+			searchGames
+			CallChain searchGames {
+				service GameDeveloperService : GameDeveloperService {
+					Message 1 {
+						operation managePlayer
+					}
+				}
+			}
+		}
+		ProvidedInterface createProfile{
+			[Operation]
+			createProfile
+		}
+		ProvidedInterface makePurchase{
+			[Operation]
+			makePurchase
+		}
+		ProvidedInterface manageGamingProfile{
+			[Operation]
+			createGamingProfile
+			queryGamingProfile
+			updateGamingProfile
+			modifyGamingProfile
+		}
+		RequiredInterface managePlatform
+		RequiredInterface managePlayer
+		DomainModel PlayerService {
+			 Entity BusinessManager {
+				ViewAnalytics : String
+				TrackRevenue : String
+				[Refer]
+			}
+			 Entity GamingProfile {
+				Achievements : String
+				Friends : String
+				GameHistory : String
+				[Refer]
+			}
+		}
+	}
+	MicroService  {
+		ProvidedInterface playMultiplayerGames{
+			[Operation]
+			playMultiplayerGames
+		}
+		DomainModel  {
+		}
+	}
+	MicroService GameModeratorService {
+		ProvidedInterface monitorplayers{
+			[Operation]
+			monitorplayers
+		}
+		ProvidedInterface manageGame{
+			[Operation]
+			createGame
+			queryGame
+			updateGame
+			modifyGame
+		}
+		RequiredInterface managePlayer
+		DomainModel GameModeratorService {
+			 Entity Game {
+				Title : String
+				Genre : String
+				Rating : String
+				[Refer]
+			}
+		}
+	}
+	MicroService BusinessManagerService {
+		ProvidedInterface viewAnalytics{
+			[Operation]
+			viewAnalytics
+		}
+		ProvidedInterface manageGameModerator{
+			[Operation]
+			createGameModerator
+			queryGameModerator
+			updateGameModerator
+			modifyGameModerator
+		}
+		RequiredInterface managePlayer
+		DomainModel BusinessManagerService {
+			 Entity GameModerator {
+				ModId : String
+				ModPassword : Integer
+				[Refer]
+			}
+		}
+	}
+	MicroService GameDeveloperService {
+		ProvidedInterface addNewGame{
+			[Operation]
+			addNewGame
+		}
+		ProvidedInterface managePlayer{
+			[Operation]
+			createPlayer
+			queryPlayer
+			updatePlayer
+			modifyPlayer
+		}
+		RequiredInterface manageGameModerator
+		RequiredInterface manageGamingProfile
+		RequiredInterface manageGame
+		DomainModel GameDeveloperService {
+			 Entity Player {
+				Username : String
+				Password : Integer
+				GamingProfile : String
+				BrowseGames : Boolean
+				InterGame : Boolean
+				[Refer]
+			}
+			 Entity GameDeveloper {
+				DevId : String
+				DevPassword : Integer
+				AddNewGames : Boolean
+				[Refer]
+			}
+		}
+	}
+	MicroService MarketingManagerService {
+		ProvidedInterface promoteGames{
+			[Operation]
+			promoteGames
+		}
+		ProvidedInterface managePlatform{
+			[Operation]
+			createPlatform
+			queryPlatform
+			updatePlatform
+			modifyPlatform
+		}
+		DomainModel MarketingManagerService {
+			 Entity Platform {
+				Games : String
+				Players : String
+				Moderators : String
+				Developers : String
+				UsageAnalytics : Real
+				RevenueAnalytics : Real
+				[Refer]
+			}
+		}
+	}
+}

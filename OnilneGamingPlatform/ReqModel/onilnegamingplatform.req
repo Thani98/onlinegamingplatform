@@ -1,0 +1,791 @@
+UseCaseModel OnlineGamingPlatform { UseCaseContext PlayerService { UC :: browseGames "browseGames" definedBySSD(BrowseGamesSSD) relatedService(BrowseGamesService) UC :: searchGames "searchGames" definedBySSD(SearchGamesSSD) relatedService(SearchGamesService) UC :: createProfile "createProfile" definedBySSD(CreateProfileSSD) relatedService(CreateProfileService) UC :: makePurchase "makePurchase" definedBySSD(MakePurchaseSSD) relatedService(MakePurchaseService) } UseCaseContext GameDeveloperService { UC :: addNewGame "addNewGame" definedBySSD(AddNewGameSSD) relatedService(AddNewGameService) } UseCaseContext GameModeratorService { UC :: monitorplayers "monitorplayers" definedBySSD(MonitorplayersSSD) relatedService(MonitorplayersService) } UseCaseContext MarketingManagerService { UC :: promoteGames "promoteGames" definedBySSD(PromoteGamesSSD) relatedService(PromoteGamesService) } UseCaseContext BusinessManagerService { UC :: viewAnalytics "viewAnalytics" definedBySSD(ViewAnalyticsSSD) relatedService(ViewAnalyticsService) } UseCaseContext EntityContext { UC :: playMultiplayerGames "playMultiplayerGames" definedBySSD(PlayMultiplayerGamesSSD) relatedService(PlayMultiplayerGamesService) }
+
+	Actor Player("Player") {
+		browseGames
+		searchGames
+		createProfile
+		playMultiplayerGames
+		makePurchase
+	}
+
+	Actor GameDeveloper("GameDeveloper") {
+		addNewGame
+	}
+
+	Actor GameModerator("GameModerator") {
+		monitorplayers
+	}
+
+	Actor MarketingManager("MarketingManager") {
+		promoteGames
+	}
+
+	Actor BusinessManager("BusinessManager") {
+		viewAnalytics
+	}
+
+	Interaction BrowseGamesSSD {
+
+		[Participants: Player BrowseGamesService]
+
+		CallMessage::BrowseGamesSSDCallMessage1(browseAvailableGames BrowseGamesSSDCallMessage1SendingEnd -> BrowseGamesSSDExecution1StartEnd)
+		ReturnMessage::sendGamesListing(BrowseGamesSSDExecution1FinishEnd -> BrowseGamesSSDCallMessage1ReturnReceivingEnd BrowseGamesSSDCallMessage1)
+		CallMessage::BrowseGamesSSDCallMessage3(joinGameSession BrowseGamesSSDCallMessage3SendingEnd -> BrowseGamesSSDExecution2StartEnd)
+		ReturnMessage::sessionJoined(BrowseGamesSSDExecution2FinishEnd -> BrowseGamesSSDCallMessage3ReturnReceivingEnd BrowseGamesSSDCallMessage3)
+		CallMessage::BrowseGamesSSDCallMessage5(leaveGameSession BrowseGamesSSDCallMessage5SendingEnd -> BrowseGamesSSDExecution3StartEnd)
+		ReturnMessage::sessionClosed(BrowseGamesSSDExecution3FinishEnd -> BrowseGamesSSDCallMessage5ReturnReceivingEnd BrowseGamesSSDCallMessage5)
+
+		Execution::BrowseGamesSSDExecution1(BrowseGamesService BrowseGamesSSDExecution1StartEnd BrowseGamesSSDExecution1FinishEnd)
+		Execution::BrowseGamesSSDExecution2(BrowseGamesService BrowseGamesSSDExecution2StartEnd BrowseGamesSSDExecution2FinishEnd)
+		Execution::BrowseGamesSSDExecution3(BrowseGamesService BrowseGamesSSDExecution3StartEnd BrowseGamesSSDExecution3FinishEnd)
+
+		MessageEnd::BrowseGamesSSDCallMessage1SendingEnd(Player BrowseGamesSSDCallMessage1)
+		ExecutionEnd::BrowseGamesSSDExecution1StartEnd(BrowseGamesService BrowseGamesSSDExecution1)
+		ExecutionEnd::BrowseGamesSSDExecution1FinishEnd(BrowseGamesService BrowseGamesSSDExecution1)
+		MessageEnd::BrowseGamesSSDCallMessage1ReturnReceivingEnd(Player sendGamesListing)
+		MessageEnd::BrowseGamesSSDCallMessage3SendingEnd(Player BrowseGamesSSDCallMessage3)
+		ExecutionEnd::BrowseGamesSSDExecution2StartEnd(BrowseGamesService BrowseGamesSSDExecution2)
+		ExecutionEnd::BrowseGamesSSDExecution2FinishEnd(BrowseGamesService BrowseGamesSSDExecution2)
+		MessageEnd::BrowseGamesSSDCallMessage3ReturnReceivingEnd(Player sessionJoined)
+		MessageEnd::BrowseGamesSSDCallMessage5SendingEnd(Player BrowseGamesSSDCallMessage5)
+		ExecutionEnd::BrowseGamesSSDExecution3StartEnd(BrowseGamesService BrowseGamesSSDExecution3)
+		ExecutionEnd::BrowseGamesSSDExecution3FinishEnd(BrowseGamesService BrowseGamesSSDExecution3)
+		MessageEnd::BrowseGamesSSDCallMessage5ReturnReceivingEnd(Player sessionClosed)
+
+	}
+
+	Interaction AddNewGameSSD {
+
+		[Participants: GameDeveloper AddNewGameService]
+
+		CallMessage::AddNewGameSSDCallMessage1(submitNewGame AddNewGameSSDCallMessage1SendingEnd -> AddNewGameSSDExecution1StartEnd)
+		ReturnMessage::AddNewGameSSDCallMessage1Return(AddNewGameSSDExecution1FinishEnd -> AddNewGameSSDCallMessage1ReturnReceivingEnd AddNewGameSSDCallMessage1)
+		CallMessage::AddNewGameSSDCallMessage3(testingGame AddNewGameSSDCallMessage3SendingEnd -> AddNewGameSSDExecution2StartEnd)
+		ReturnMessage::AddNewGameSSDCallMessage3Return(AddNewGameSSDExecution2FinishEnd -> AddNewGameSSDCallMessage3ReturnReceivingEnd AddNewGameSSDCallMessage3)
+		CallMessage::AddNewGameSSDCallMessage5(addGameToStore AddNewGameSSDCallMessage5SendingEnd -> AddNewGameSSDExecution3StartEnd)
+		ReturnMessage::AddNewGameSSDCallMessage5Return(AddNewGameSSDExecution3FinishEnd -> AddNewGameSSDCallMessage5ReturnReceivingEnd AddNewGameSSDCallMessage5)
+
+		Execution::AddNewGameSSDExecution1(AddNewGameService AddNewGameSSDExecution1StartEnd AddNewGameSSDExecution1FinishEnd)
+		Execution::AddNewGameSSDExecution2(AddNewGameService AddNewGameSSDExecution2StartEnd AddNewGameSSDExecution2FinishEnd)
+		Execution::AddNewGameSSDExecution3(AddNewGameService AddNewGameSSDExecution3StartEnd AddNewGameSSDExecution3FinishEnd)
+
+		MessageEnd::AddNewGameSSDCallMessage1SendingEnd(GameDeveloper AddNewGameSSDCallMessage1)
+		ExecutionEnd::AddNewGameSSDExecution1StartEnd(AddNewGameService AddNewGameSSDExecution1)
+		ExecutionEnd::AddNewGameSSDExecution1FinishEnd(AddNewGameService AddNewGameSSDExecution1)
+		MessageEnd::AddNewGameSSDCallMessage1ReturnReceivingEnd(GameDeveloper AddNewGameSSDCallMessage1Return)
+		MessageEnd::AddNewGameSSDCallMessage3SendingEnd(GameDeveloper AddNewGameSSDCallMessage3)
+		ExecutionEnd::AddNewGameSSDExecution2StartEnd(AddNewGameService AddNewGameSSDExecution2)
+		ExecutionEnd::AddNewGameSSDExecution2FinishEnd(AddNewGameService AddNewGameSSDExecution2)
+		MessageEnd::AddNewGameSSDCallMessage3ReturnReceivingEnd(GameDeveloper AddNewGameSSDCallMessage3Return)
+		MessageEnd::AddNewGameSSDCallMessage5SendingEnd(GameDeveloper AddNewGameSSDCallMessage5)
+		ExecutionEnd::AddNewGameSSDExecution3StartEnd(AddNewGameService AddNewGameSSDExecution3)
+		ExecutionEnd::AddNewGameSSDExecution3FinishEnd(AddNewGameService AddNewGameSSDExecution3)
+		MessageEnd::AddNewGameSSDCallMessage5ReturnReceivingEnd(GameDeveloper AddNewGameSSDCallMessage5Return)
+
+	}
+
+	Interaction SearchGamesSSD {
+
+		[Participants: Player SearchGamesService]
+
+		CallMessage::SearchGamesSSDCallMessage1(searchForGames SearchGamesSSDCallMessage1SendingEnd -> SearchGamesSSDExecution1StartEnd)
+		ReturnMessage::sendGamesResults(SearchGamesSSDExecution1FinishEnd -> SearchGamesSSDCallMessage1ReturnReceivingEnd SearchGamesSSDCallMessage1)
+		CallMessage::SearchGamesSSDCallMessage3(startNewGame SearchGamesSSDCallMessage3SendingEnd -> SearchGamesSSDExecution2StartEnd)
+		ReturnMessage::loadGame(SearchGamesSSDExecution2FinishEnd -> SearchGamesSSDCallMessage3ReturnReceivingEnd SearchGamesSSDCallMessage3)
+		CallMessage::SearchGamesSSDCallMessage5(endGame SearchGamesSSDCallMessage5SendingEnd -> SearchGamesSSDExecution3StartEnd)
+		ReturnMessage::unloadGame(SearchGamesSSDExecution3FinishEnd -> SearchGamesSSDCallMessage5ReturnReceivingEnd SearchGamesSSDCallMessage5)
+
+		Execution::SearchGamesSSDExecution1(SearchGamesService SearchGamesSSDExecution1StartEnd SearchGamesSSDExecution1FinishEnd)
+		Execution::SearchGamesSSDExecution2(SearchGamesService SearchGamesSSDExecution2StartEnd SearchGamesSSDExecution2FinishEnd)
+		Execution::SearchGamesSSDExecution3(SearchGamesService SearchGamesSSDExecution3StartEnd SearchGamesSSDExecution3FinishEnd)
+
+		MessageEnd::SearchGamesSSDCallMessage1SendingEnd(Player SearchGamesSSDCallMessage1)
+		ExecutionEnd::SearchGamesSSDExecution1StartEnd(SearchGamesService SearchGamesSSDExecution1)
+		ExecutionEnd::SearchGamesSSDExecution1FinishEnd(SearchGamesService SearchGamesSSDExecution1)
+		MessageEnd::SearchGamesSSDCallMessage1ReturnReceivingEnd(Player sendGamesResults)
+		MessageEnd::SearchGamesSSDCallMessage3SendingEnd(Player SearchGamesSSDCallMessage3)
+		ExecutionEnd::SearchGamesSSDExecution2StartEnd(SearchGamesService SearchGamesSSDExecution2)
+		ExecutionEnd::SearchGamesSSDExecution2FinishEnd(SearchGamesService SearchGamesSSDExecution2)
+		MessageEnd::SearchGamesSSDCallMessage3ReturnReceivingEnd(Player loadGame)
+		MessageEnd::SearchGamesSSDCallMessage5SendingEnd(Player SearchGamesSSDCallMessage5)
+		ExecutionEnd::SearchGamesSSDExecution3StartEnd(SearchGamesService SearchGamesSSDExecution3)
+		ExecutionEnd::SearchGamesSSDExecution3FinishEnd(SearchGamesService SearchGamesSSDExecution3)
+		MessageEnd::SearchGamesSSDCallMessage5ReturnReceivingEnd(Player unloadGame)
+
+	}
+
+	Interaction CreateProfileSSD {
+
+		[Participants: Player CreateProfileService]
+
+		CallMessage::CreateProfileSSDCallMessage1(enterRegistrationDetails CreateProfileSSDCallMessage1SendingEnd -> CreateProfileSSDExecution1StartEnd)
+		ReturnMessage::accountCreated(CreateProfileSSDExecution1FinishEnd -> CreateProfileSSDCallMessage1ReturnReceivingEnd CreateProfileSSDCallMessage1)
+		CallMessage::CreateProfileSSDCallMessage3(createPlayerProfile CreateProfileSSDCallMessage3SendingEnd -> CreateProfileSSDExecution2StartEnd)
+		ReturnMessage::playerProfileCreated(CreateProfileSSDExecution2FinishEnd -> CreateProfileSSDCallMessage3ReturnReceivingEnd CreateProfileSSDCallMessage3)
+		CallMessage::CreateProfileSSDCallMessage5(customizeProfile CreateProfileSSDCallMessage5SendingEnd -> CreateProfileSSDExecution3StartEnd)
+		ReturnMessage::profileCustomized(CreateProfileSSDExecution3FinishEnd -> CreateProfileSSDCallMessage5ReturnReceivingEnd CreateProfileSSDCallMessage5)
+		CallMessage::CreateProfileSSDCallMessage7(completeRegistration CreateProfileSSDCallMessage7SendingEnd -> CreateProfileSSDExecution4StartEnd)
+		ReturnMessage::registrationComplete(CreateProfileSSDExecution4FinishEnd -> CreateProfileSSDCallMessage7ReturnReceivingEnd CreateProfileSSDCallMessage7)
+
+		Execution::CreateProfileSSDExecution1(CreateProfileService CreateProfileSSDExecution1StartEnd CreateProfileSSDExecution1FinishEnd)
+		Execution::CreateProfileSSDExecution2(CreateProfileService CreateProfileSSDExecution2StartEnd CreateProfileSSDExecution2FinishEnd)
+		Execution::CreateProfileSSDExecution3(CreateProfileService CreateProfileSSDExecution3StartEnd CreateProfileSSDExecution3FinishEnd)
+		Execution::CreateProfileSSDExecution4(CreateProfileService CreateProfileSSDExecution4StartEnd CreateProfileSSDExecution4FinishEnd)
+
+		MessageEnd::CreateProfileSSDCallMessage1SendingEnd(Player CreateProfileSSDCallMessage1)
+		ExecutionEnd::CreateProfileSSDExecution1StartEnd(CreateProfileService CreateProfileSSDExecution1)
+		ExecutionEnd::CreateProfileSSDExecution1FinishEnd(CreateProfileService CreateProfileSSDExecution1)
+		MessageEnd::CreateProfileSSDCallMessage1ReturnReceivingEnd(Player accountCreated)
+		MessageEnd::CreateProfileSSDCallMessage3SendingEnd(Player CreateProfileSSDCallMessage3)
+		ExecutionEnd::CreateProfileSSDExecution2StartEnd(CreateProfileService CreateProfileSSDExecution2)
+		ExecutionEnd::CreateProfileSSDExecution2FinishEnd(CreateProfileService CreateProfileSSDExecution2)
+		MessageEnd::CreateProfileSSDCallMessage3ReturnReceivingEnd(Player playerProfileCreated)
+		MessageEnd::CreateProfileSSDCallMessage5SendingEnd(Player CreateProfileSSDCallMessage5)
+		ExecutionEnd::CreateProfileSSDExecution3StartEnd(CreateProfileService CreateProfileSSDExecution3)
+		ExecutionEnd::CreateProfileSSDExecution3FinishEnd(CreateProfileService CreateProfileSSDExecution3)
+		MessageEnd::CreateProfileSSDCallMessage5ReturnReceivingEnd(Player profileCustomized)
+		MessageEnd::CreateProfileSSDCallMessage7SendingEnd(Player CreateProfileSSDCallMessage7)
+		ExecutionEnd::CreateProfileSSDExecution4StartEnd(CreateProfileService CreateProfileSSDExecution4)
+		ExecutionEnd::CreateProfileSSDExecution4FinishEnd(CreateProfileService CreateProfileSSDExecution4)
+		MessageEnd::CreateProfileSSDCallMessage7ReturnReceivingEnd(Player registrationComplete)
+
+	}
+
+	Interaction PlayMultiplayerGamesSSD {
+
+		[Participants: Player PlayMultiplayerGamesService]
+
+		CallMessage::PlayMultiplayerGamesSSDCallMessage1(searchMultiplayerGames PlayMultiplayerGamesSSDCallMessage1SendingEnd -> PlayMultiplayerGamesSSDExecution1StartEnd)
+		ReturnMessage::listGames(PlayMultiplayerGamesSSDExecution1FinishEnd -> PlayMultiplayerGamesSSDCallMessage1ReturnReceivingEnd PlayMultiplayerGamesSSDCallMessage1)
+		CallMessage::PlayMultiplayerGamesSSDCallMessage3(joiningGameSession PlayMultiplayerGamesSSDCallMessage3SendingEnd -> PlayMultiplayerGamesSSDExecution2StartEnd)
+		ReturnMessage::PlayMultiplayerGamesSSDCallMessage3Return(PlayMultiplayerGamesSSDExecution2FinishEnd -> PlayMultiplayerGamesSSDCallMessage3ReturnReceivingEnd PlayMultiplayerGamesSSDCallMessage3)
+		CallMessage::PlayMultiplayerGamesSSDCallMessage5(endGameSession PlayMultiplayerGamesSSDCallMessage5SendingEnd -> PlayMultiplayerGamesSSDExecution3StartEnd)
+		ReturnMessage::PlayMultiplayerGamesSSDCallMessage5Return(PlayMultiplayerGamesSSDExecution3FinishEnd -> PlayMultiplayerGamesSSDCallMessage5ReturnReceivingEnd PlayMultiplayerGamesSSDCallMessage5)
+
+		Execution::PlayMultiplayerGamesSSDExecution1(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution1StartEnd PlayMultiplayerGamesSSDExecution1FinishEnd)
+		Execution::PlayMultiplayerGamesSSDExecution2(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution2StartEnd PlayMultiplayerGamesSSDExecution2FinishEnd)
+		Execution::PlayMultiplayerGamesSSDExecution3(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution3StartEnd PlayMultiplayerGamesSSDExecution3FinishEnd)
+
+		MessageEnd::PlayMultiplayerGamesSSDCallMessage1SendingEnd(Player PlayMultiplayerGamesSSDCallMessage1)
+		ExecutionEnd::PlayMultiplayerGamesSSDExecution1StartEnd(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution1)
+		ExecutionEnd::PlayMultiplayerGamesSSDExecution1FinishEnd(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution1)
+		MessageEnd::PlayMultiplayerGamesSSDCallMessage1ReturnReceivingEnd(Player listGames)
+		MessageEnd::PlayMultiplayerGamesSSDCallMessage3SendingEnd(Player PlayMultiplayerGamesSSDCallMessage3)
+		ExecutionEnd::PlayMultiplayerGamesSSDExecution2StartEnd(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution2)
+		ExecutionEnd::PlayMultiplayerGamesSSDExecution2FinishEnd(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution2)
+		MessageEnd::PlayMultiplayerGamesSSDCallMessage3ReturnReceivingEnd(Player PlayMultiplayerGamesSSDCallMessage3Return)
+		MessageEnd::PlayMultiplayerGamesSSDCallMessage5SendingEnd(Player PlayMultiplayerGamesSSDCallMessage5)
+		ExecutionEnd::PlayMultiplayerGamesSSDExecution3StartEnd(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution3)
+		ExecutionEnd::PlayMultiplayerGamesSSDExecution3FinishEnd(PlayMultiplayerGamesService PlayMultiplayerGamesSSDExecution3)
+		MessageEnd::PlayMultiplayerGamesSSDCallMessage5ReturnReceivingEnd(Player PlayMultiplayerGamesSSDCallMessage5Return)
+
+	}
+
+	Interaction MakePurchaseSSD {
+
+		[Participants: Player MakePurchaseService]
+
+		CallMessage::MakePurchaseSSDCallMessage1(viewPurchaseOptions MakePurchaseSSDCallMessage1SendingEnd -> MakePurchaseSSDExecution1StartEnd)
+		ReturnMessage::showOffering(MakePurchaseSSDExecution1FinishEnd -> MakePurchaseSSDCallMessage1ReturnReceivingEnd MakePurchaseSSDCallMessage1)
+		CallMessage::MakePurchaseSSDCallMessage3(selectItemToPurchase MakePurchaseSSDCallMessage3SendingEnd -> MakePurchaseSSDExecution2StartEnd)
+		ReturnMessage::MakePurchaseSSDCallMessage3Return(MakePurchaseSSDExecution2FinishEnd -> MakePurchaseSSDCallMessage3ReturnReceivingEnd MakePurchaseSSDCallMessage3)
+		CallMessage::MakePurchaseSSDCallMessage5(enterPaymentDetails MakePurchaseSSDCallMessage5SendingEnd -> MakePurchaseSSDExecution3StartEnd)
+		ReturnMessage::MakePurchaseSSDCallMessage5Return(MakePurchaseSSDExecution3FinishEnd -> MakePurchaseSSDCallMessage5ReturnReceivingEnd MakePurchaseSSDCallMessage5)
+		CallMessage::MakePurchaseSSDCallMessage7(completePurchase MakePurchaseSSDCallMessage7SendingEnd -> MakePurchaseSSDExecution4StartEnd)
+		ReturnMessage::MakePurchaseSSDCallMessage7Return(MakePurchaseSSDExecution4FinishEnd -> MakePurchaseSSDCallMessage7ReturnReceivingEnd MakePurchaseSSDCallMessage7)
+
+		Execution::MakePurchaseSSDExecution1(MakePurchaseService MakePurchaseSSDExecution1StartEnd MakePurchaseSSDExecution1FinishEnd)
+		Execution::MakePurchaseSSDExecution2(MakePurchaseService MakePurchaseSSDExecution2StartEnd MakePurchaseSSDExecution2FinishEnd)
+		Execution::MakePurchaseSSDExecution3(MakePurchaseService MakePurchaseSSDExecution3StartEnd MakePurchaseSSDExecution3FinishEnd)
+		Execution::MakePurchaseSSDExecution4(MakePurchaseService MakePurchaseSSDExecution4StartEnd MakePurchaseSSDExecution4FinishEnd)
+
+		MessageEnd::MakePurchaseSSDCallMessage1SendingEnd(Player MakePurchaseSSDCallMessage1)
+		ExecutionEnd::MakePurchaseSSDExecution1StartEnd(MakePurchaseService MakePurchaseSSDExecution1)
+		ExecutionEnd::MakePurchaseSSDExecution1FinishEnd(MakePurchaseService MakePurchaseSSDExecution1)
+		MessageEnd::MakePurchaseSSDCallMessage1ReturnReceivingEnd(Player showOffering)
+		MessageEnd::MakePurchaseSSDCallMessage3SendingEnd(Player MakePurchaseSSDCallMessage3)
+		ExecutionEnd::MakePurchaseSSDExecution2StartEnd(MakePurchaseService MakePurchaseSSDExecution2)
+		ExecutionEnd::MakePurchaseSSDExecution2FinishEnd(MakePurchaseService MakePurchaseSSDExecution2)
+		MessageEnd::MakePurchaseSSDCallMessage3ReturnReceivingEnd(Player MakePurchaseSSDCallMessage3Return)
+		MessageEnd::MakePurchaseSSDCallMessage5SendingEnd(Player MakePurchaseSSDCallMessage5)
+		ExecutionEnd::MakePurchaseSSDExecution3StartEnd(MakePurchaseService MakePurchaseSSDExecution3)
+		ExecutionEnd::MakePurchaseSSDExecution3FinishEnd(MakePurchaseService MakePurchaseSSDExecution3)
+		MessageEnd::MakePurchaseSSDCallMessage5ReturnReceivingEnd(Player MakePurchaseSSDCallMessage5Return)
+		MessageEnd::MakePurchaseSSDCallMessage7SendingEnd(Player MakePurchaseSSDCallMessage7)
+		ExecutionEnd::MakePurchaseSSDExecution4StartEnd(MakePurchaseService MakePurchaseSSDExecution4)
+		ExecutionEnd::MakePurchaseSSDExecution4FinishEnd(MakePurchaseService MakePurchaseSSDExecution4)
+		MessageEnd::MakePurchaseSSDCallMessage7ReturnReceivingEnd(Player MakePurchaseSSDCallMessage7Return)
+
+	}
+
+	Interaction MonitorplayersSSD {
+
+		[Participants: GameModerator MonitorplayersService]
+
+		CallMessage::MonitorplayersSSDCallMessage1(reviewActivity MonitorplayersSSDCallMessage1SendingEnd -> MonitorplayersSSDExecution1StartEnd)
+		ReturnMessage::MonitorplayersSSDCallMessage1Return(MonitorplayersSSDExecution1FinishEnd -> MonitorplayersSSDCallMessage1ReturnReceivingEnd MonitorplayersSSDCallMessage1)
+		CallMessage::MonitorplayersSSDCallMessage3(scanChat MonitorplayersSSDCallMessage3SendingEnd -> MonitorplayersSSDExecution2StartEnd)
+		ReturnMessage::MonitorplayersSSDCallMessage3Return(MonitorplayersSSDExecution2FinishEnd -> MonitorplayersSSDCallMessage3ReturnReceivingEnd MonitorplayersSSDCallMessage3)
+
+		Execution::MonitorplayersSSDExecution1(MonitorplayersService MonitorplayersSSDExecution1StartEnd MonitorplayersSSDExecution1FinishEnd)
+		Execution::MonitorplayersSSDExecution2(MonitorplayersService MonitorplayersSSDExecution2StartEnd MonitorplayersSSDExecution2FinishEnd)
+
+		MessageEnd::MonitorplayersSSDCallMessage1SendingEnd(GameModerator MonitorplayersSSDCallMessage1)
+		ExecutionEnd::MonitorplayersSSDExecution1StartEnd(MonitorplayersService MonitorplayersSSDExecution1)
+		ExecutionEnd::MonitorplayersSSDExecution1FinishEnd(MonitorplayersService MonitorplayersSSDExecution1)
+		MessageEnd::MonitorplayersSSDCallMessage1ReturnReceivingEnd(GameModerator MonitorplayersSSDCallMessage1Return)
+		MessageEnd::MonitorplayersSSDCallMessage3SendingEnd(GameModerator MonitorplayersSSDCallMessage3)
+		ExecutionEnd::MonitorplayersSSDExecution2StartEnd(MonitorplayersService MonitorplayersSSDExecution2)
+		ExecutionEnd::MonitorplayersSSDExecution2FinishEnd(MonitorplayersService MonitorplayersSSDExecution2)
+		MessageEnd::MonitorplayersSSDCallMessage3ReturnReceivingEnd(GameModerator MonitorplayersSSDCallMessage3Return)
+
+	}
+
+	Interaction PromoteGamesSSD {
+
+		[Participants: MarketingManager PromoteGamesService]
+
+		CallMessage::PromoteGamesSSDCallMessage1(postGameTrailer PromoteGamesSSDCallMessage1SendingEnd -> PromoteGamesSSDExecution1StartEnd)
+		ReturnMessage::PromoteGamesSSDCallMessage1Return(PromoteGamesSSDExecution1FinishEnd -> PromoteGamesSSDCallMessage1ReturnReceivingEnd PromoteGamesSSDCallMessage1)
+		CallMessage::PromoteGamesSSDCallMessage3(runAdCampaign PromoteGamesSSDCallMessage3SendingEnd -> PromoteGamesSSDExecution2StartEnd)
+		ReturnMessage::PromoteGamesSSDCallMessage3Return(PromoteGamesSSDExecution2FinishEnd -> PromoteGamesSSDCallMessage3ReturnReceivingEnd PromoteGamesSSDCallMessage3)
+
+		Execution::PromoteGamesSSDExecution1(PromoteGamesService PromoteGamesSSDExecution1StartEnd PromoteGamesSSDExecution1FinishEnd)
+		Execution::PromoteGamesSSDExecution2(PromoteGamesService PromoteGamesSSDExecution2StartEnd PromoteGamesSSDExecution2FinishEnd)
+
+		MessageEnd::PromoteGamesSSDCallMessage1SendingEnd(MarketingManager PromoteGamesSSDCallMessage1)
+		ExecutionEnd::PromoteGamesSSDExecution1StartEnd(PromoteGamesService PromoteGamesSSDExecution1)
+		ExecutionEnd::PromoteGamesSSDExecution1FinishEnd(PromoteGamesService PromoteGamesSSDExecution1)
+		MessageEnd::PromoteGamesSSDCallMessage1ReturnReceivingEnd(MarketingManager PromoteGamesSSDCallMessage1Return)
+		MessageEnd::PromoteGamesSSDCallMessage3SendingEnd(MarketingManager PromoteGamesSSDCallMessage3)
+		ExecutionEnd::PromoteGamesSSDExecution2StartEnd(PromoteGamesService PromoteGamesSSDExecution2)
+		ExecutionEnd::PromoteGamesSSDExecution2FinishEnd(PromoteGamesService PromoteGamesSSDExecution2)
+		MessageEnd::PromoteGamesSSDCallMessage3ReturnReceivingEnd(MarketingManager PromoteGamesSSDCallMessage3Return)
+
+	}
+
+	Interaction ViewAnalyticsSSD {
+
+		[Participants: BusinessManager ViewAnalyticsService]
+
+		CallMessage::ViewAnalyticsSSDCallMessage1(getPlayerActivity ViewAnalyticsSSDCallMessage1SendingEnd -> ViewAnalyticsSSDExecution1StartEnd)
+		ReturnMessage::ViewAnalyticsSSDCallMessage1Return(ViewAnalyticsSSDExecution1FinishEnd -> ViewAnalyticsSSDCallMessage1ReturnReceivingEnd ViewAnalyticsSSDCallMessage1)
+		CallMessage::ViewAnalyticsSSDCallMessage3(getUserEngagenent ViewAnalyticsSSDCallMessage3SendingEnd -> ViewAnalyticsSSDExecution2StartEnd)
+		ReturnMessage::ViewAnalyticsSSDCallMessage3Return(ViewAnalyticsSSDExecution2FinishEnd -> ViewAnalyticsSSDCallMessage3ReturnReceivingEnd ViewAnalyticsSSDCallMessage3)
+		CallMessage::ViewAnalyticsSSDCallMessage5(getReveueReports ViewAnalyticsSSDCallMessage5SendingEnd -> ViewAnalyticsSSDExecution3StartEnd)
+		ReturnMessage::ViewAnalyticsSSDCallMessage5Return(ViewAnalyticsSSDExecution3FinishEnd -> ViewAnalyticsSSDCallMessage5ReturnReceivingEnd ViewAnalyticsSSDCallMessage5)
+		CallMessage::ViewAnalyticsSSDCallMessage7(analyzePlayerRetention ViewAnalyticsSSDCallMessage7SendingEnd -> ViewAnalyticsSSDExecution4StartEnd)
+		ReturnMessage::ViewAnalyticsSSDCallMessage7Return(ViewAnalyticsSSDExecution4FinishEnd -> ViewAnalyticsSSDCallMessage7ReturnReceivingEnd ViewAnalyticsSSDCallMessage7)
+
+		Execution::ViewAnalyticsSSDExecution1(ViewAnalyticsService ViewAnalyticsSSDExecution1StartEnd ViewAnalyticsSSDExecution1FinishEnd)
+		Execution::ViewAnalyticsSSDExecution2(ViewAnalyticsService ViewAnalyticsSSDExecution2StartEnd ViewAnalyticsSSDExecution2FinishEnd)
+		Execution::ViewAnalyticsSSDExecution3(ViewAnalyticsService ViewAnalyticsSSDExecution3StartEnd ViewAnalyticsSSDExecution3FinishEnd)
+		Execution::ViewAnalyticsSSDExecution4(ViewAnalyticsService ViewAnalyticsSSDExecution4StartEnd ViewAnalyticsSSDExecution4FinishEnd)
+
+		MessageEnd::ViewAnalyticsSSDCallMessage1SendingEnd(BusinessManager ViewAnalyticsSSDCallMessage1)
+		ExecutionEnd::ViewAnalyticsSSDExecution1StartEnd(ViewAnalyticsService ViewAnalyticsSSDExecution1)
+		ExecutionEnd::ViewAnalyticsSSDExecution1FinishEnd(ViewAnalyticsService ViewAnalyticsSSDExecution1)
+		MessageEnd::ViewAnalyticsSSDCallMessage1ReturnReceivingEnd(BusinessManager ViewAnalyticsSSDCallMessage1Return)
+		MessageEnd::ViewAnalyticsSSDCallMessage3SendingEnd(BusinessManager ViewAnalyticsSSDCallMessage3)
+		ExecutionEnd::ViewAnalyticsSSDExecution2StartEnd(ViewAnalyticsService ViewAnalyticsSSDExecution2)
+		ExecutionEnd::ViewAnalyticsSSDExecution2FinishEnd(ViewAnalyticsService ViewAnalyticsSSDExecution2)
+		MessageEnd::ViewAnalyticsSSDCallMessage3ReturnReceivingEnd(BusinessManager ViewAnalyticsSSDCallMessage3Return)
+		MessageEnd::ViewAnalyticsSSDCallMessage5SendingEnd(BusinessManager ViewAnalyticsSSDCallMessage5)
+		ExecutionEnd::ViewAnalyticsSSDExecution3StartEnd(ViewAnalyticsService ViewAnalyticsSSDExecution3)
+		ExecutionEnd::ViewAnalyticsSSDExecution3FinishEnd(ViewAnalyticsService ViewAnalyticsSSDExecution3)
+		MessageEnd::ViewAnalyticsSSDCallMessage5ReturnReceivingEnd(BusinessManager ViewAnalyticsSSDCallMessage5Return)
+		MessageEnd::ViewAnalyticsSSDCallMessage7SendingEnd(BusinessManager ViewAnalyticsSSDCallMessage7)
+		ExecutionEnd::ViewAnalyticsSSDExecution4StartEnd(ViewAnalyticsService ViewAnalyticsSSDExecution4)
+		ExecutionEnd::ViewAnalyticsSSDExecution4FinishEnd(ViewAnalyticsService ViewAnalyticsSSDExecution4)
+		MessageEnd::ViewAnalyticsSSDCallMessage7ReturnReceivingEnd(BusinessManager ViewAnalyticsSSDCallMessage7Return)
+
+	}
+
+	Service OnlineGamingPlatformSystem {
+
+		[Operation]
+		newGame()
+		monitorplayers()
+		promoteGames()
+		viewAnalytics()
+
+	}
+
+	Service ThirdPartyServices {
+
+	}
+
+	Service BrowseGamesService {
+
+		[Operation]
+		browseAvailableGames()
+		joinGameSession()
+		leaveGameSession()
+
+	}
+
+	Service AddNewGameService {
+
+		[Operation]
+		submitNewGame(releasingNewGame)
+		testingGame()
+		addGameToStore()
+
+	}
+
+	Service SearchGamesService {
+
+		[Operation]
+		searchForGames()
+		startNewGame()
+		endGame()
+
+	}
+
+	Service CreateProfileService {
+
+		[Operation]
+		enterRegistrationDetails()
+		createPlayerProfile()
+		customizeProfile()
+		completeRegistration()
+
+	}
+
+	Service PlayMultiplayerGamesService {
+
+		[Operation]
+		searchMultiplayerGames(browseGames)
+		joiningGameSession(gamejoined)
+		endGameSession(sessionEnded)
+
+	}
+
+	Service MakePurchaseService {
+
+		[Operation]
+		viewPurchaseOptions(lookingForGame)
+		selectItemToPurchase(chooseingGame)
+		enterPaymentDetails(toMakePurchase)
+		completePurchase(purchaseMade)
+
+	}
+
+	Service MonitorplayersService {
+
+		[Operation]
+		reviewActivity(reviewIssue)
+		scanChat()
+
+	}
+
+	Service PromoteGamesService {
+
+		[Operation]
+		postGameTrailer()
+		runAdCampaign()
+
+	}
+
+	Service ViewAnalyticsService {
+
+		[Operation]
+		getPlayerActivity()
+		getUserEngagenent()
+		getReveueReports()
+		analyzePlayerRetention()
+
+	}
+
+	Contract OnlineGamingPlatformSystem::searchGames() : Boolean {
+
+		definition:
+			sg:Player = Player.allInstance()->any(s:Player | s.username = "Player1")
+
+		precondition:
+			true
+
+		postcondition:
+			if
+				(sg.oclIsUndefined() = false)
+			then
+				self.Game1 = true and
+				self.username = sg and
+				result = true
+			else
+				self.Game1 = false and
+				result = false
+			endif
+
+	}
+
+	Contract PlayMultiplayerGamesService::searchMultiplayerGames(browseGames : String) : Boolean {
+
+		definition:
+			sm:Player = Player.allInstance()->any(s:Player | s.Multiplayer = "Playeres")
+
+		precondition:
+			self.browseGames = true and
+			self.browseGames.oclIsUndefined() = false
+
+		postcondition:
+			if
+				self.InputPass.Password = password
+			then
+				self.PasswordValidated = true and
+				return = true
+			else
+				self.PasswordValidated = false and
+				return = false
+			endif
+	}
+
+	Contract PlayMultiplayerGamesService::joinGameSession() : Boolean {
+
+		precondition:
+			self.JoinGame = true and
+			self.ValidateGame = true and
+			self.StartGame.oclIsUndefined() = false
+
+		postcondition:
+			if
+				self.IsJoined = true
+			then
+				result = self.GameJoined
+			endif
+	}
+
+	Contract BrowseGamesService::browseAvailableGames() : Boolean {
+
+		definition:
+			bg:Player = Player.allInstance()->any(b:Player | b.GameName = "Games")
+
+		precondition:
+			self.GameValidated = true and
+			self.GameNameValidated = true and
+			self.InputGameName.oclIsUndefined() = false
+
+		postcondition:
+			self.GameName = null and
+			self.GameNameValidated = false and
+			self.GameValidated = false and
+			self.IsFound = false and
+			self.IsAvailable = false and
+			result = true
+	}
+
+	Contract BrowseGamesService::leaveGameSession() : Boolean {
+
+		precondition:
+			true
+
+		postcondition:
+			if
+				(bc.oclIsUndefined() = false)
+			then
+				self.SessionIDValidated = true and
+				self.leaveSession = bc and
+				result = true
+			endif
+	}
+
+	Contract SearchGamesService::searchForGames() : Boolean {
+
+		definition:
+			sh:Player = Player.allInstance()->any(s:Player | s.GameName = "Games")
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract SearchGamesService::startNewGame() : Boolean {
+
+		precondition:
+			self.StartGame = true and
+			self.GameValidated = true and
+			self.GameStarting.oclIsUndefined() = false
+
+		postcondition:
+			true
+	}
+
+	Contract SearchGamesService::endGame() : Boolean {
+
+		precondition:
+			self.EndGame = true and
+			self.EndingGame.oclIsUndefined() = false
+
+		postcondition:
+			true
+	}
+
+	Contract CreateProfileService::enterRegistrationDetails() : Boolean {
+
+		definition:
+			cf:Player = Player.allInstance()->any(c:Player | c.Profile = "Registration")
+
+		precondition:
+			true
+		postcondition:
+			if
+				(sh.oclIsUndefined() = false)
+			then
+				self.UsernameValidated = true and
+				self.InputUsername = sh and
+				result = true
+			else
+				self.PrpfileValidated = false and
+				result = false
+			endif
+	}
+
+	Contract CreateProfileService::createPlayerProfile() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract CreateProfileService::customizeProfile() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract CreateProfileService::completeRegistration() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract OnlineGamingPlatformSystem::newGame() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract OnlineGamingPlatformSystem::monitorplayers() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract OnlineGamingPlatformSystem::promoteGames() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract OnlineGamingPlatformSystem::viewAnalytics() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract PlayMultiplayerGamesService::joiningGameSession(gamejoined : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract PlayMultiplayerGamesService::endGameSession(sessionEnded : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract MakePurchaseService::viewPurchaseOptions(lookingForGame : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract MakePurchaseService::selectItemToPurchase(chooseingGame : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract MakePurchaseService::enterPaymentDetails(toMakePurchase : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract MakePurchaseService::completePurchase(purchaseMade : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract AddNewGameService::submitNewGame(releasingNewGame : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract AddNewGameService::testingGame() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract AddNewGameService::addGameToStore() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract MonitorplayersService::reviewActivity(reviewIssue : String) : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract MonitorplayersService::scanChat() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract PromoteGamesService::postGameTrailer() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract PromoteGamesService::runAdCampaign() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract ViewAnalyticsService::getPlayerActivity() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract ViewAnalyticsService::getUserEngagenent() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract ViewAnalyticsService::getReveueReports() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+	Contract ViewAnalyticsService::analyzePlayerRetention() : Boolean {
+
+		precondition:
+			true
+		postcondition:
+			true
+	}
+
+}
+
+DomainModel OnilneGamingPlatform { EntityContext PlayerService { Entity BusinessManager {
+		ViewAnalytics : String
+		TrackRevenue : String
+
+		[Refer]
+		Manages : Platform Association
+	} Entity GamingProfile {
+		Achievements : String
+		Friends : String
+		GameHistory : String
+
+		[Refer]
+		SaveData : Player ! Association
+	} } EntityContext GameDeveloperService { Entity Player {
+		Username : String
+		Password : Integer
+		GamingProfile : String
+		BrowseGames : Boolean
+		InterGame : Boolean
+
+		[Refer]
+		Information : GameModerator ! Aggregation
+		SignUp : GamingProfile Association
+		Playes : Game* Association
+	} Entity GameDeveloper {
+		DevId : String
+		DevPassword : Integer
+		AddNewGames : Boolean
+
+		[Refer]
+		DevelopsGames : Game* Association
+	} } EntityContext GameModeratorService { Entity Game {
+		Title : String
+		Genre : String
+		Rating : String
+
+		[Refer]
+		PlayedBy : Player ! Association
+	} } EntityContext MarketingManagerService { Entity Platform {
+		Games : String
+		Players : String
+		Moderators : String
+		Developers : String
+		UsageAnalytics : Real
+		RevenueAnalytics : Real
+	}
+
+} EntityContext BusinessManagerService { Entity GameModerator {
+		ModId : String
+		ModPassword : Integer
+
+		[Refer]
+		Monitors : Player* Association
+	} } }
